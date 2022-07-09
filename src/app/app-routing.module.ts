@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'load-more-list',
     loadChildren: () => import('./Pages/load-more-list/load-more-list.module').then( m => m.LoadMoreListPageModule)
   },
+  {
+    path: 'user-list',
+    loadChildren: () => import('./Pages/user-list/user-list.module').then( m => m.UserListPageModule)
+  },
+  {
+    path: 'user-posts',
+    loadChildren: () => import('./Pages/user-posts/user-posts.module').then( m => m.UserPostsPageModule)
+  },
 ];
 
 @NgModule({

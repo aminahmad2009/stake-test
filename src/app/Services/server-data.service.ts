@@ -40,8 +40,8 @@ export class ServerDataService {
     a.present();
   }
 
-  getUsers(){
-    return this.http.get(this.server + 'users');
+  getUsers(q=''){
+    return this.http.get(this.server + 'users/?name_like='+q);
   }
 
   getSingleUser(id){
@@ -50,5 +50,9 @@ export class ServerDataService {
 
   getPosts(page=1, limit=10){
     return this.http.get(this.server + 'posts/?_page=' + page + '&_limit=' + limit);
+  }
+
+  getUserPosts(user){
+    return this.http.get(this.server + 'posts/?userId='+user);
   }
 }
