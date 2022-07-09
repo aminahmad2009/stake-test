@@ -14,9 +14,6 @@ export class LoadMoreListPage implements OnInit {
   constructor(public sd: ServerDataService) { }
 
   ngOnInit() {
-  }
-
-  ionViewDidEnter(){
     this.sd.loading()
     this.sd.getPosts(this.page, 20).subscribe(d=>{
       
